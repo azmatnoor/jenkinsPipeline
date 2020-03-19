@@ -33,6 +33,13 @@
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
+                    <argLine>-XX:-UseSplitVerifier</argLine>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>*.json</exclude>
+                            <exclude>*.robot</exclude>
+                        </excludes>
+                    </instrumentation>
                     <formats>
                         <format>xml</format>
                     </formats>
