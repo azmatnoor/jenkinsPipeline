@@ -16,6 +16,11 @@ pipeline {
                 sh "mvn test"
              }
         }
+        stage('Create coverage report') {
+                     steps {
+                        sh "mvn cobertura:cobertura"
+                     }
+                }
         stage('newman') {
             steps {
                 sh 'newman run "Restful Booker.postman_collection.json" --environment "Restful Booker.postman_environment.json" --reporters cli,junit'
