@@ -21,12 +21,12 @@ pipeline {
                         sh "mvn cobertura:cobertura"
                      }
                 }
-        stage('newman') {
+        stage('Newman') {
             steps {
                 sh 'newman run "Restful Booker.postman_collection.json" --environment "Restful Booker.postman_environment.json" --reporters cli,junit'
             }
          }
-        stage('robot') {
+        stage('Robot') {
              steps {
                  sh 'robot -d results --variable BROWSER:headlesschrome infotivTest.robot'
              }
