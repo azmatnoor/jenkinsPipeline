@@ -39,9 +39,6 @@
                             <exclude>*.robot</exclude>
                         </excludes>
                     </instrumentation>
-                    <formats>
-                        <format>xml</format>
-                    </formats>
                 </configuration>
                 <executions>
                     <execution>
